@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">点击添加</button>
+    <button class="loge">点击</button>
+    <script src='index.js'></script>
+    <script>
+        var body=document.querySelector("body");
+        var btn=document.getElementsByClassName('btn')[0];
+        var loge=document.getElementsByClassName('loge')[0];
+        var div=body.getElementsByTagName("div");
+        btn.onclick=function(){
+           const create=new Create({
+              body:body,
+              content:'你好',
+              sum:1
+          });
+        }
+        var open=true;
+        loge.onclick=function(){
+           if(open){
+              for(var i=0; i<div.length;i++){
+                 div[i].style.display='none';
+              }
+              open=false;
+           }else{
+             for(var i=0; i<div.length;i++){
+                 div[i].style.display='block';
+              }
+              open=true;
+           }
+        }
+    </script>
+</body>
+</html>
